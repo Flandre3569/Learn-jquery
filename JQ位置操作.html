@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script crossorigin="anonymous" integrity="sha512-WNLxfP/8cVYL9sj8Jnp6et0BkubLP31jhTG9vhL/F5uEZmg5wEzKoXp1kJslzPQWwPT1eyMiSxlKCgzHLOTOTQ==" src="http://lib.baomitu.com/jquery/3.5.1/jquery.js"></script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .father {
+            position: relative;
+            height: 300px;
+            width: 300px;
+            background-color:skyblue;
+            top: 200px;
+            left: 200px;
+        }
+        .son {
+            top: 10px;
+            position: absolute;
+            margin: 10px;
+            padding: 10px;
+            height: 100px;
+            width: 100px;
+            background-color: pink;
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="father">
+        <div class="son"></div>
+    </div>
+
+    <script>
+        $(function(){
+            //获取.son对象，内含相对于页面的top和left两个属性值
+            console.log($(".son").offset());
+            //获取.son相对于页面的顶端的距离
+            console.log($(".son").offset().top);
+            //获取.son对象，内含相对于父级的top和left两个属性值
+            console.log($(".son").position());
+            //获取.son相对于父级的顶端的距离
+            console.log($(".son").position().top);
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script crossorigin="anonymous" integrity="sha512-WNLxfP/8cVYL9sj8Jnp6et0BkubLP31jhTG9vhL/F5uEZmg5wEzKoXp1kJslzPQWwPT1eyMiSxlKCgzHLOTOTQ==" src="http://lib.baomitu.com/jquery/3.5.1/jquery.js"></script>
+
+</head>
+<body>
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+
+    <script>
+        $(function(){
+            // 给不同的dom获取不同的颜色
+            var sum=0;
+            var arr=['blue','green','red'];
+            $("div").each(function(index,domEle){
+                console.log(index);
+                //利用数组依次进行变色
+                $(domEle).css("color",arr[index]);
+                //把所有的元素内容相加
+                sum+= parseInt($(domEle).text());
+            })
+           
+        console.log(sum);
+        
+        })
+    </script>
+</body>
+</html>

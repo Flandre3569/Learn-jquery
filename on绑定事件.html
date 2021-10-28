@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script crossorigin="anonymous" integrity="sha512-WNLxfP/8cVYL9sj8Jnp6et0BkubLP31jhTG9vhL/F5uEZmg5wEzKoXp1kJslzPQWwPT1eyMiSxlKCgzHLOTOTQ==" src="http://lib.baomitu.com/jquery/3.5.1/jquery.js"></script>
+    
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+        }
+        .current {
+            background-color:orange;
+        }
+    </style>
+</head>
+<body>
+    <div class="change_color"></div>
+
+    <script>
+        // $('.change_color').on({
+        //     mouseover:function(){
+        //         $(this).css("background","skyblue")
+        //     },
+        //     click:function(){
+        //         $(this).css("background","purple")
+        //     },
+        //     mouseleave:function(){
+        //         $(this).css("background","black")
+        //     }
+        // })
+        
+
+
+        //此方法适用于两个效果实现一个功能的情况
+        $('.change_color').on("mouseenter mouseleave",function(){
+            $(this).toggleClass("current");
+        })
+    </script>
+</body>
+</html>

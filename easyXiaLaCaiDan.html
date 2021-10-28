@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>下拉菜单</title>
+    <script crossorigin="anonymous" integrity="sha512-WNLxfP/8cVYL9sj8Jnp6et0BkubLP31jhTG9vhL/F5uEZmg5wEzKoXp1kJslzPQWwPT1eyMiSxlKCgzHLOTOTQ==" src="http://lib.baomitu.com/jquery/3.5.1/jquery.js"></script>
+
+    <style>
+        table tr {
+            background-color: #9999ff;
+            text-align: center;
+            cursor: pointer;
+        }
+        table tr td {
+            width: 120px;
+
+        }
+        div {
+            text-align: center;
+        }
+        .box1,.box2,.box3 {
+            background: #9999ff;
+            position: absolute;
+            top: 38px;
+            width: 120px;
+            display: none;
+
+        }
+        .box1 {
+            left: 12px;
+
+        }
+        .box2 {
+            left:137px;
+        }
+        .box3 {
+            left:260px;
+        }
+
+    </style>
+</head>
+    <body>
+    <table>
+        <tr>
+            <td class="td1" id="0">系列课程</td>
+            <td class="td2" id="1">教学课件</td>
+            <td class="td3" id="2">课程大纲</td>
+        </tr>
+    </table>
+
+    <div class="box1" >
+        <span>C++课件</span></br>
+        <span>java课件</span></br>
+        <span>C#课件</span></br>
+    </div>
+    <div class="box2" >
+        <span>C++课件</span></br>
+        <span>java课件</span></br>
+        <span>C#课件</span></br>
+    </div>
+    <div class="box3" >
+        <span>C++课件</span></br>
+        <span>java课件</span></br>
+        <span>C#课件</span></br>
+    </div>
+
+    <script>
+        $(function (){
+            $("table tr td").hover(function (){
+                var index=$(this).attr("id");
+                $("div").eq(index).stop().slideToggle(200);
+            })
+        })
+    </script>
+    </body>
+</html>

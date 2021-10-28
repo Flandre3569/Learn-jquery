@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 150px;
+            height: 400px;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+    <button class="btn_show">显示</button>
+    <button class="btn_hide">隐藏</button>
+    <button class="btn_tab">切换</button>
+    <div></div>
+
+    <script crossorigin="anonymous" integrity="sha512-WNLxfP/8cVYL9sj8Jnp6et0BkubLP31jhTG9vhL/F5uEZmg5wEzKoXp1kJslzPQWwPT1eyMiSxlKCgzHLOTOTQ==" src="http://lib.baomitu.com/jquery/3.5.1/jquery.js"></script>
+
+    <script>
+        $(function(){
+            // $(".btn_show").click(function(){
+            //     $("div").show(100,function(){
+            //         alert(2);
+            //     });
+
+            // })
+            // $(".btn_hide").click(function(){
+            //     $("div").hide(100,function(){
+            //         alert(1);
+            //     });
+            // })
+            $(".btn_tab").click(function(){
+                $("div").toggle();
+            })
+        });
+    </script>
+</body>
+</html>

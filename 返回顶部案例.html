@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script crossorigin="anonymous" integrity="sha512-WNLxfP/8cVYL9sj8Jnp6et0BkubLP31jhTG9vhL/F5uEZmg5wEzKoXp1kJslzPQWwPT1eyMiSxlKCgzHLOTOTQ==" src="http://lib.baomitu.com/jquery/3.5.1/jquery.js"></script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            top: 400px;
+            margin:0 auto;
+            position: relative;
+            width: 700px;
+            height: 1500px;
+            background-color: skyblue;
+        }
+        .button {
+            position: fixed;
+            top: 700px;
+            right: 0;
+            height: 50px;
+            width: 50px;
+            background-color: pink;
+            display: none;
+        }
+        .button a {
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container"></div>
+    <div class="button"> 
+        <a href="javascript:;">返回顶部</a>
+    </div>
+    
+
+    <script>
+        $(function(){
+            var topx=$(".container").offset().top;
+            $(window).scroll(function(){
+                if($(document).scrollTop()>=topx){
+                    $(".button").fadeIn();
+                }else{
+                    $(".button").fadeOut();
+                }
+            })
+            $("a").click(function(){
+                //普通的返回顶部
+                // $(document).scrollTop(0);
+
+                //动画的返回页面顶部
+                $("body,html").stop().animate({
+                    scrollTop:0
+                });
+            })
+        })
+    </script>
+</body>
+</html>

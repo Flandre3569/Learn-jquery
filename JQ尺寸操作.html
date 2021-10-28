@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script crossorigin="anonymous" integrity="sha512-WNLxfP/8cVYL9sj8Jnp6et0BkubLP31jhTG9vhL/F5uEZmg5wEzKoXp1kJslzPQWwPT1eyMiSxlKCgzHLOTOTQ==" src="http://lib.baomitu.com/jquery/3.5.1/jquery.js"></script>
+
+    <style>
+        div {
+            height: 200px;
+            width: 200px;
+            margin: 20px;
+            padding: 20px;
+            border:10px skyblue solid;
+            background-color: pink;
+        }
+    </style>
+
+    <script>
+        $(function(){
+            //只是获得div的width
+        console.log($("div").width());
+        //包含padding的div的width
+        console.log($("div").innerWidth());
+        //包含padding和border的div的width
+        console.log($("div").outerWidth());
+        //包含padding、border和margin的div的width
+        console.log($("div").outerWidth(true));
+        })
+    </script>
+</head>
+<body>
+    <div>
+
+    </div>
+</body>
+</html>

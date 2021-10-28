@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>伪造AJAX</title>
+
+    <style>
+        .main {
+            width: 100%;
+            height: 500px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <p>请输入要加载的地址:</p>
+        <p>
+            <input type="text" id="url" value="">
+            <input type="button" value="提交" id="btn">
+        </p>
+    </div>
+
+    <div>
+        <h3>页面加载的位置:</h3>
+        <iframe class="main">
+
+        </iframe>
+    </div>
+
+    <script>
+        var btn=document.querySelector('#btn');
+        var iframePosition=document.querySelector('.main');
+        btn.addEventListener('click',function (){
+            var targetURL=document.querySelector('#url').value;
+            iframePosition.src=targetURL;
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-top: -100px;
+            margin-left: -100px;
+            transition: all 1s;
+            border-radius: 50px;
+        }
+        .current {
+            background-color: skyblue;
+            transform: rotate(360deg);
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+
+    </div>
+
+<script crossorigin="anonymous" integrity="sha512-WNLxfP/8cVYL9sj8Jnp6et0BkubLP31jhTG9vhL/F5uEZmg5wEzKoXp1kJslzPQWwPT1eyMiSxlKCgzHLOTOTQ==" src="http://lib.baomitu.com/jquery/3.5.1/jquery.js"></script>    
+    <script>
+        $(function(){
+            $("#box").mouseover(function(){
+                $(this).addClass("current");
+            })
+            $("#box").mouseout(function(){
+                $(this).removeClass("current");
+            })
+        });
+    </script>
+</body>
+</html>

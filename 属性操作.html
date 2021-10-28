@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script crossorigin="anonymous" integrity="sha512-WNLxfP/8cVYL9sj8Jnp6et0BkubLP31jhTG9vhL/F5uEZmg5wEzKoXp1kJslzPQWwPT1eyMiSxlKCgzHLOTOTQ==" src="http://lib.baomitu.com/jquery/3.5.1/jquery.js"></script>
+
+</head>
+<body>
+    <a href="https://www.bilibili.com/" title="都挺好">都挺好</a>
+    <input type="checkbox" name="" checked>
+    <div index="1">输入内容</div>
+    <span>hello</span>
+    <input type="text" name="" id="" value="大家好">
+    
+
+    <script>
+        $(function(){
+            //获取属性值和修改属性值
+            console.log($("a").prop("href"));
+            $("a").prop("title","我们都很好");
+            $("input").change(function(){
+                console.log($(this).prop("checked"));
+            })
+            console.log($("div").attr("index"));
+            $("span").data("uname","andy");
+            console.log($("span").data("uname"));
+            //获取内容和修改内容
+            $("div").html("你好");
+            console.log($("div").html());
+            
+            $("div").text("你不好");
+            console.log($("div").text());
+
+            //获取表单value值
+            $("input").val("表单值的获取");
+            console.log($("input").val());
+            
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script crossorigin="anonymous" integrity="sha512-WNLxfP/8cVYL9sj8Jnp6et0BkubLP31jhTG9vhL/F5uEZmg5wEzKoXp1kJslzPQWwPT1eyMiSxlKCgzHLOTOTQ==" src="http://lib.baomitu.com/jquery/3.5.1/jquery.js"></script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .bigBox {
+            position: relative;
+            top: 200px;
+            left: 200px;
+            width: 600px;
+            height: 250px;
+            border-style: solid;
+            border-width: 2px;
+            overflow: auto;
+        }
+        .txt {
+            position: relative;
+            top: 47px;
+            left: 38px;
+            width: 400px;
+        }
+        .btn {
+            position: relative;
+            top: 50px;
+            left: 40px;
+        }
+        ul {
+            position: relative;
+            width: 450px;
+            padding-left: 80px;
+            top: 50px;
+        }
+        ul li {
+            list-style: none;
+            line-height: 25px;
+            border-bottom: 1px dashed #cccccc;
+            display: none;
+        }
+        input {
+            float: right;
+        }
+        ul li a {
+            float: right;
+        }
+        div span {
+            position: relative;
+            top: -100px;
+        }
+    </style>
+</head>
+<body>
+    <div class="bigBox">
+        <span class="title">微博发布</span>
+        <textarea name="" class="txt" cols="30" rows="10"></textarea>
+        <button class="btn">发布</button>
+        <ul></ul>
+    </div>
+
+    <script>
+        //主体内容
+        $(".btn").on("click",function(){
+            var li=$("<li></li>");
+            li.html($(".txt").val()+"<a href='javascript:;'>删除</a>");
+            $("ul").prepend(li);
+            li.slideDown();
+            $(".txt").val("");
+        })
+        //删除功能
+        $("ul").on("click","a",function(){
+            $(this).parent().slideUp(function(){
+                $(this).remove();
+            });
+        })
+    </script>
+</body>
+</html>
